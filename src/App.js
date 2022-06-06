@@ -5,7 +5,9 @@ import Navi from './Navi';
 import ProductList from './ProductList';
 // import { Container ,Row ,Col } from "reactstrap"
 import alertify from "alertifyjs"
-
+//import { Route, Switch} from 'react-router-dom';
+import NotFound from './NotFound';
+import { Route, Switch } from "react-router";
 
 export default class App extends Component{
 
@@ -66,6 +68,10 @@ export default class App extends Component{
               <CategoryList currentCategory ={this.state.currentCategory} changeCategory={this.changeCategory} info={categoryInfo}/>
             </Col>
             <Col xs="9">
+              <Switch>
+                <Route exact path="/" component={NotFound}/>
+              </Switch>
+              
               <ProductList 
               products = {this.state.products}
               addToCart = {this.addToCart}
