@@ -5,8 +5,11 @@ import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'alertifyjs/build/css/alertify.min.css'
-import { BrowserRouter, Route ,Routes} from "react-router-dom";
-import Zehra from './zehra';
+import { BrowserRouter } from "react-router-dom";
+// import Zehra from './zehra';
+// import CartList from "./CartList"
+// import NotFound from "./NotFound"
+// import ProductList from './ProductList';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,10 +17,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<App />} />
+            <App />
+            {/* <Routes>
+                <Route exact path="/" element={<App />} />
                 <Route  path="/zehra" element={<Zehra />} />
-            </Routes>
+                <Route  path="/cart" element={<CartList />} />
+                <Route element={<NotFound />} />
+            </Routes> */}
         </BrowserRouter>
     </React.StrictMode>
 );
@@ -28,4 +34,4 @@ root.render(
 
 reportWebVitals();
 
-serviceWorker.unregister();
+// serviceWorker.unregister();

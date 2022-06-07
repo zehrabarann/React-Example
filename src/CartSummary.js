@@ -8,6 +8,7 @@ import {
     NavItem,
     NavLink
 } from 'reactstrap';
+import {Link} from "react-router-dom";
 
 export default class CartSummary extends Component {
     renderSummary(){
@@ -16,7 +17,7 @@ export default class CartSummary extends Component {
         <DropdownToggle nav caret>
             Your Cart - {this.props.cart.length}
         </DropdownToggle>
-        <DropdownMenu right>
+        <DropdownMenu end>
             {
                 this.props.cart.map(cartItem => (
                     <DropdownItem key = {cartItem.product.id}>
@@ -30,7 +31,7 @@ export default class CartSummary extends Component {
             
             <DropdownItem divider />
             <DropdownItem>
-            Reset
+                <Link to="cart">Go to cart</Link>
             </DropdownItem>
         </DropdownMenu>
         </UncontrolledDropdown>)
