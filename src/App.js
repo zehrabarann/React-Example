@@ -9,6 +9,8 @@ import Zehra from './zehra';
 import CartList from "./CartList"
 import NotFound from "./NotFound"
 import Home from './home';
+import FormDemo1 from './FormDemo1';
+import FormDemo2 from './FormDemo2';
 
 export default class App extends Component {
 
@@ -70,16 +72,18 @@ export default class App extends Component {
               <CategoryList currentCategory={this.state.currentCategory} changeCategory={this.changeCategory} info={categoryInfo} />
             </Col>
             <Col xs="9">
-                <Routes>
-                  <Route path="/" element={window.location.pathname === "/" &&
-                    <ProductList
-                      products={this.state.products}
-                      addToCart={this.addToCart}
-                      currentCategory={this.state.currentCategory} info={productInfo} />} />
-                  <Route path="/zehra" element={<Zehra />} />
-                  <Route path="/cart" element={<CartList removeFromCart={this.removeFromCart} cart={this.state.cart} />} />
-                  <Route element={<NotFound />} />
-                </Routes>
+              <Routes>
+                <Route path="/" element={window.location.pathname === "/" &&
+                  <ProductList
+                    products={this.state.products}
+                    addToCart={this.addToCart}
+                    currentCategory={this.state.currentCategory} info={productInfo} />} />
+                <Route path="/zehra" element={<Zehra />} />
+                <Route path="/cart" element={<CartList removeFromCart={this.removeFromCart} cart={this.state.cart} />} />
+                <Route element={<NotFound />} />
+                <Route path="form1" element={<FormDemo1 />}></Route>
+                <Route path="form2" element={<FormDemo2 />}></Route>
+              </Routes>
             </Col>
           </Row>
         </Container>
